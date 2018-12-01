@@ -24,3 +24,4 @@
   networking = {
     hostName = "virtualbox";
   };
+}
