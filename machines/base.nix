@@ -8,5 +8,9 @@
       ../users.nix
     ];
     
+    # Alow unfree packages
+    nixpkgs.config.allowUnfree = true;
+    
+    # Enable exfat for mounted drives
     boot.extraModulePackages = [ config.boot.kernelPackages.exfat-nofuse ];
 }
