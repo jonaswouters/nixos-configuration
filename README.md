@@ -5,6 +5,7 @@
 During installation of nixos, right after the ```nixos-generate-config --root /mnt``` command
 
 ```
+nix-env -i git
 mv /mnt/etc/nixos /mnt/etc/nixos.install
 git clone https://github.com/jonaswouters/nixos-configuration /mnt/etc/nixos
 cp /mnt/etc/nixos.install/hardware-configuration.nix /mnt/etc/nixos/
