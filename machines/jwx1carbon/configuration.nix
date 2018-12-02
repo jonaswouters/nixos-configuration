@@ -4,6 +4,7 @@
   imports =
     [
       ../base-unstable.nix
+      ../../packages/xserver.nix
       ../../packages/user/development.nix
       ../../packages/user/desktop/i3.nix
     ];
