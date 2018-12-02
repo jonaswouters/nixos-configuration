@@ -21,3 +21,4 @@
   networking = {
     hostName = "jwdesktop";
   };
+}
