@@ -19,13 +19,13 @@
       "video"
       "wheel"
     ];
-    
-    # Home manager
-    home-manager.users.jonaswouters = { 
-      programs.git = {
-        enable = true;
-        userName  = "Jonas Wouters";
-      };
+  };
+  
+  # Home manager
+  home-manager.users.jonaswouters = { 
+    programs.git = {
+      enable = true;
+      userName  = "Jonas Wouters";
     };
   };
 }
