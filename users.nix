@@ -26,6 +26,7 @@
     programs.git = {
       enable = true;
       userName  = "Jonas Wouters";
+      userEmail = "jonas@jw.be";
     };
   };
 }
