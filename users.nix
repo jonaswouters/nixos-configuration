@@ -26,6 +26,6 @@
         enable = true;
         userName  = "Jonas Wouters";
       };
-    }
+    };
   };
 }
