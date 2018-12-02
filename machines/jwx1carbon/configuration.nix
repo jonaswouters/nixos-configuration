@@ -5,6 +5,7 @@
     [
       ../base-unstable.nix
       ../../packages/user/development.nix
+      ../../packages/user/desktop/i3.nix
     ];
     
   # Boot settings
