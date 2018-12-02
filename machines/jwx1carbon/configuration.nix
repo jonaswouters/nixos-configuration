@@ -4,6 +4,7 @@
   imports =
     [
       ../base.nix
+      ../../packages/development.nix
     ];
     
   # Boot settings
