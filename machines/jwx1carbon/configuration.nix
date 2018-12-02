@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ../base.nix
+      ../base-unstable.nix
       ../../packages/development.nix
     ];
     
