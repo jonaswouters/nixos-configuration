@@ -46,6 +46,6 @@ chmod -R 600 ~/.ssh/id_rsa*
 ### Make config editable for user
 
 ```
-sudo chown -R jonaswouters:jonaswouters /etc/nixos/
+sudo chown -R jonaswouters /etc/nixos/
 git remote set-url origin git@github.com:jonaswouters/nixos-configuration.git
 ```
