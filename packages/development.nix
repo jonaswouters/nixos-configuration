@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
+  home-manager.users.jonaswouters.home.packages = with pkgs; [
     # Jetbrains
     jetbrains.datagrip
     jetbrains.goland
