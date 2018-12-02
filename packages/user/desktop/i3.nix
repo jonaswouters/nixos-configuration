@@ -7,7 +7,7 @@
       
       windowManager.i3 = rec {
         enable = true;
-      }
+      };
     };
   };
 }
