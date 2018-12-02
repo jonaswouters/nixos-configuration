@@ -1,6 +1,11 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports = [
+    # Home manager import
+    "${builtins.fetchTarball https://github.com/rycee/home-manager/archive/master.tar.gz}/nixos"
+  ];
+
   # Users
   users.users.jonaswouters = {
     isNormalUser = true;
@@ -14,5 +19,13 @@
       "video"
       "wheel"
     ];
+    
+    # Home manager
+    home-manager.users.jonaswouters = { 
+      programs.git = {
+        enable = true;
+        userName  = "Jonas Wouters";
+      };
+    }
   };
 }
