@@ -7,4 +7,6 @@
       ../hardware-configuration.nix
       ../users.nix
     ];
+    
+    boot.extraModulePackages = [ config.boot.kernelPackages.exfat-nofuse ];
 }
