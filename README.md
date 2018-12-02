@@ -17,6 +17,7 @@ Proceed with installation as normal.
 ## Post-Installation
 
 ### Machine specific
+
 [Lenovo Thinkpad X1 Carbon 2018](machines/jwx1carbon/README.md)
 
 ### Mount SSH keys drive
@@ -24,7 +25,7 @@ Proceed with installation as normal.
 ```
 mkdir -p /media/secret
 mount /dev/disk/by-label/PRIVATE /media/secret
-
+```
 
 ### Set user password
 
