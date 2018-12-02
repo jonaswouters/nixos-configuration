@@ -47,5 +47,6 @@ chmod -R 600 ~/.ssh/id_rsa*
 
 ```
 sudo chown -R jonaswouters /etc/nixos/
+cd /etc/nixos/
 git remote set-url origin git@github.com:jonaswouters/nixos-configuration.git
 ```
