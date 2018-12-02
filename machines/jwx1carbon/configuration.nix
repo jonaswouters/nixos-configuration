@@ -4,7 +4,7 @@
   imports =
     [
       ../base-unstable.nix
-      ../../packages/user-development.nix
+      ../../packages/user/development.nix
     ];
     
   # Boot settings
