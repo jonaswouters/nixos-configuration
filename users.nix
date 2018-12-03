@@ -32,7 +32,11 @@
     programs.ssh = {
       enable = true;
       forwardAgent = true;
-      
+    };
+    
+    services.gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
     };
   };
 }
