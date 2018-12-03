@@ -4,10 +4,10 @@
   home-manager.users.jonaswouters = {
      xsession = {
       enable = true;
-      desktopManager.default = "i3";
       
-      windowManager.i3 = rec {
+      windowManager.i3 = {
         enable = true;
+        package = pkgs.i3-gaps
       };
     };
   };
