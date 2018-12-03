@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  services.xserver = {
+    desktopManager.default = "awesome";
+  };
   home-manager.users.jonaswouters = {
-    services.xserver = {
-      desktopManager.default = "awesome";
-    };
     xsession = {
       enable = true;
       
