@@ -5,7 +5,9 @@
     enable = true;
     displayManager.slim = {
       enable = true;
+      defaultUser = "jonaswouters";
     };
+    desktopManager.default = "none";
     desktopManager.xterm.enable = false;
   };
 }
