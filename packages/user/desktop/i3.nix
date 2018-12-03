@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+let
+  modifier = "Mod4";
+  move = "50px";
+in
 {
   home-manager.users.jonaswouters = {
      xsession = {
@@ -8,9 +12,10 @@
       windowManager.i3 = {
         enable = true;
         package = pkgs.i3-gaps; 
+        config = {
+          modifier = "${modifier}";
+        };
       };
-      
-      home.file."i3/config".source = "i3/config";
     };
   };
 }
