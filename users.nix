@@ -28,5 +28,11 @@
       userName  = "Jonas Wouters";
       userEmail = "jonas@jw.be";
     };
+    
+    programs.ssh = {
+      enable = true;
+      forwardAgent = true;
+      
+    };
   };
 }
