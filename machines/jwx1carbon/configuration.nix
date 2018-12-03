@@ -7,7 +7,7 @@
       
       # Xserver
       ../../packages/xserver.nix
-      ../../packages/user/desktop/i3.nix
+      ../../packages/user/desktop/awesome.nix
       ./trackpad.nix
       
       # Packages
