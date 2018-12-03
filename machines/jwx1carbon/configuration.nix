@@ -4,9 +4,15 @@
   imports =
     [
       ../base-unstable.nix
+      
+      # Xserver
       ../../packages/xserver.nix
-      ../../packages/user/development.nix
       ../../packages/user/desktop/i3.nix
+      ./trackpad.nix
+      
+      # Packages
+      ../../packages/user/development.nix
+      
     ];
     
   # Boot settings
