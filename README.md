@@ -39,6 +39,7 @@ su - jonaswouters
 ```
 cp -R /media/secret/.aws ~/
 cp -R /media/secret/.ssh ~/
+cp -R /media/secret/.gnupg ~/
 chmod 700 ~/.ssh
 chmod -R 600 ~/.ssh/id_rsa*
 ```
