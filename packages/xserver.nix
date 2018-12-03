@@ -6,7 +6,6 @@
     displayManager.slim = {
       enable = true;
     };
-    desktopManager.default = "none";
     desktopManager.xterm.enable = false;
   };
 }
