@@ -2,7 +2,10 @@
 
 {
   home-manager.users.jonaswouters = {
-     xsession = {
+    services.xserver = {
+      desktopManager.default = "awesome";
+    };
+    xsession = {
       enable = true;
       
       windowManager.awesome = {
