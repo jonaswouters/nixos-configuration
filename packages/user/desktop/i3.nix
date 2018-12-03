@@ -7,8 +7,10 @@
       
       windowManager.i3 = {
         enable = true;
-        package = pkgs.i3-gaps;
+        package = pkgs.i3-gaps; 
       };
+      
+      home.file."i3/config".source = "i3/config";
     };
   };
 }
