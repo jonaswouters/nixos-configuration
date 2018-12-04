@@ -22,9 +22,8 @@ in
           modifier = "${modifier}";
           lib.mkOptionDefault {
             "${modifier}+Return" = "exec ${terminal}";
-          }
-        };
-        
+          };
+        }; 
       };
     };
   };
