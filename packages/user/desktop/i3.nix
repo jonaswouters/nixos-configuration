@@ -25,7 +25,7 @@ in
                   
           keybindings = lib.mkOptionDefault {
             "${modifier}+Return" = "exec ${terminal}";
-            "${modifier}+d" = "exec rofi -show drun -show-icons -display-drun ''"Launcher''"";
+            "${modifier}+d" = "exec rofi -show drun -show-icons -display-drun \"Launcher\"";
           };
         }; 
       };
