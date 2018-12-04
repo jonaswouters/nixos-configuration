@@ -21,7 +21,7 @@ in
         config = {
           modifier = "${modifier}";
                   
-          keybindings = {
+          keybindings = lib.mkOptionDefault {
             "${modifier}+Return" = "exec ${terminal}";
           };
         }; 
