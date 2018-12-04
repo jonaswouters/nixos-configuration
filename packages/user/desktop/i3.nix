@@ -22,7 +22,7 @@ in
           modifier = "${modifier}";
         }; 
         
-        keyBindings =  {
+        keybindings = {
           "${modifier}+Return" = "exec ${terminal}";
         };
       };
