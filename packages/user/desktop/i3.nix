@@ -11,6 +11,7 @@ in
       # Programs
       ./programs/common.nix
       ./programs/termite.nix
+      ./programs/rofi.nix
     ];
   home-manager.users.jonaswouters = {
      xsession = {
@@ -24,6 +25,7 @@ in
                   
           keybindings = lib.mkOptionDefault {
             "${modifier}+Return" = "exec ${terminal}";
+            "${modifier}+d exec rofi -show drun -show-icons -display-drun \"Launcher\"";
           };
         }; 
       };
