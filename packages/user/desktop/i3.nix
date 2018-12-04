@@ -9,6 +9,7 @@ in
   imports =
     [
       # Programs
+      ./programs/common.nix
       ./programs/termite.nix
     ];
   home-manager.users.jonaswouters = {
