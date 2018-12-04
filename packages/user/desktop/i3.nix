@@ -20,10 +20,11 @@ in
         package = pkgs.i3-gaps; 
         config = {
           modifier = "${modifier}";
-          lib.mkOptionDefault {
-            "${modifier}+Return" = "exec ${terminal}";
-          };
         }; 
+        
+        keyBindings =  {
+          "${modifier}+Return" = "exec ${terminal}";
+        };
       };
     };
   };
