@@ -20,11 +20,11 @@ in
         package = pkgs.i3-gaps; 
         config = {
           modifier = "${modifier}";
+                  
+          keybindings = {
+            "${modifier}+Return" = "exec ${terminal}";
+          };
         }; 
-        
-        keybindings = {
-          "${modifier}+Return" = "exec ${terminal}";
-        };
       };
     };
   };
