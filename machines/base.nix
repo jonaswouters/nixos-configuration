@@ -15,6 +15,12 @@
     # Enable exfat for mounted drives
     boot.extraModulePackages = [ config.boot.kernelPackages.exfat-nofuse ];
     
+    # Enable OpenSSH
+    services.openssh = {
+      enable = true;
+      passwordAuthentication = false;
+    };
+    
     # Enable gpg & ssh agent
     programs.gnupg.agent = {
       enable = true;
