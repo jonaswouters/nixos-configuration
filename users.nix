@@ -35,7 +35,7 @@ in
     programs.git = {
       enable = true;
       userName  = "${fullName}";
-      userEmail = "jonas@jw.be";
+      userEmail = "${email}";
     };
     
     programs.ssh = {
