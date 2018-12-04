@@ -3,8 +3,14 @@
 let
   modifier = "Mod4";
   move = "50px";
+  terminal = "termite";
 in
 {
+  imports =
+    [
+      # Programs
+      ./programs/termite.nix
+    ];
   home-manager.users.jonaswouters = {
      xsession = {
       enable = true;
@@ -14,7 +20,11 @@ in
         package = pkgs.i3-gaps; 
         config = {
           modifier = "${modifier}";
+          lib.mkOptionDefault {
+            "${modifier}+Return" = "exec ${terminal}";
+          }
         };
+        
       };
     };
   };
