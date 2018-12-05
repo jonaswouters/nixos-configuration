@@ -13,6 +13,7 @@ in
       ./programs/common.nix
       ./programs/termite.nix
       ./programs/rofi.nix
+      ./programs/polybar.nix
     ];
   home-manager.users.jonaswouters = {
      xsession = {
