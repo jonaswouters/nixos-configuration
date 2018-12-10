@@ -27,7 +27,10 @@ in
   
           startup = [
             { command = "xrandr --dpi ${dpi}"; }
+            { command = "systemctl --user restart polybar"; always = true; notification = false; }
           ];
+
+          bars = [];
 
           keybindings = {
             "${modifier}+Return" = "exec ${terminal}";

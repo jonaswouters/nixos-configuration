@@ -7,9 +7,16 @@ in
   home-manager.users.jonaswouters = {
      services.polybar = {
       enable = true;
+      package = pkgs.polybar.override {
+        i3GapsSupport = true;
+        #pulseSupport = true;
+        #iwSupport = true;
+        #githubSupport = true;
+        mpdSupport = true;
+      };
 
       script = "polybar bar1 &; polybar bar2 &;";
-      extraConfig = "
+      extraConfig = ''
         [global/wm]
         margin-top = 5
         margin-bottom = 2
@@ -54,11 +61,11 @@ in
         #modules-right = cpu memory temperature filesystem wlan backlight volume battery date
         modules-center = i3
 
-        background = \${colors.background}
-        foreground = \${colors.foreground}
+        background = ''${colors.background}
+        foreground = ''${colors.foreground}
 
         underline-size = 3
-        underline-color = \${colors.orange}
+        underline-color = ''${colors.orange}
 
         tray-detached = false
         tray-position = right
@@ -95,11 +102,11 @@ in
         modules-center = i3
         modules-left = eth wlan filesystem temperature memory cpu
 
-        background = \${colors.background}
-        foreground = \${colors.foreground}
+        background = ''${colors.background}
+        foreground = ''${colors.foreground}
 
         underline-size = 3
-        underline-color = \${colors.orange}
+        underline-color = ''${colors.orange}
 
         tray-detached = false
         tray-position = right
@@ -113,7 +120,7 @@ in
 
         [module/xwindow]
         type = internal/xwindow
-        #format-underline = \${colors.background}
+        #format-underline = ''${colors.background}
         label = %title%
         label-maxlen = 30
 
@@ -128,24 +135,24 @@ in
 
         label-mode-padding = 1
         label-mode-foreground = #db3f3f
-        label-mode-background = \${colors.primary}
+        label-mode-background = ''${colors.primary}
 
         label-focused = %name%
-        label-focused-background = \${colors.gray}
-        label-focused-underline = \${colors.orange}
+        label-focused-background = ''${colors.gray}
+        label-focused-underline = ''${colors.orange}
         label-focused-padding = 1
 
         label-unfocused = %name%
         label-unfocused-padding = 1
 
         label-urgent = %name%!
-        label-urgent-foreground = \${colors.red}
+        label-urgent-foreground = ''${colors.red}
         label-urgent-padding = 1
 
         label-visible = %name%
-        label-visible-background = \${self.label-focused-background}
-        label-visible-underline = \${self.label-focused-underline}
-        label-visible-padding = \${self.label-focused-padding}
+        label-visible-background = ''${self.label-focused-background}
+        label-visible-underline = ''${self.label-focused-underline}
+        label-visible-padding = ''${self.label-focused-padding}
 
         [module/backlight]
         type = internal/backlight
@@ -153,16 +160,16 @@ in
 
         format = <label>
         format-padding = 1
-        format-underline = \${colors.orange}
+        format-underline = ''${colors.orange}
         label =  %percentage%%
 
         bar-width = 6
         bar-indicator = 
-        bar-indicator-foreground = \${colors.white}
+        bar-indicator-foreground = ''${colors.white}
         bar-indicator-font = 0
         bar-fill = 
         bar-fill-font = 0
-        bar-fill-foreground = \${colors.white}
+        bar-fill-foreground = ''${colors.white}
         bar-empty = 
         bar-empty-font = 0
         bar-empty-foreground = #282a2e
@@ -171,8 +178,8 @@ in
         type = internal/date
         date =  %A %d %b  %H:%M
         interval = 5
-        format-underline = \${colors.orange}
-        format-foreground = \${colors.foreground}
+        format-underline = ''${colors.orange}
+        format-foreground = ''${colors.foreground}
         format-padding = 1
 
         [module/volume]
@@ -182,12 +189,12 @@ in
         format-volume-padding = 1
         label-muted-padding = 1
 
-        format-volume-underline = \${colors.orange}
+        format-volume-underline = ''${colors.orange}
 
         label-volume = %percentage%%
 
         label-muted =  mut
-        label-muted-underline = \${colors.orange}
+        label-muted-underline = ''${colors.orange}
 
         ramp-volume-0 = 
         ramp-volume-1 = 
@@ -202,34 +209,34 @@ in
 
         format-charging = <animation-charging> <label-charging>
         label-charging = %percentage%%
-        format-charging-underline = \${colors.orange}
+        format-charging-underline = ''${colors.orange}
         format-charging-padding = 1
 
         time-format = %H:%M
         #label-discharging = %percentage%% - %time%
         label-discharging = %percentage%%
         format-discharging = <ramp-capacity> <label-discharging> 
-        format-discharging-underline = \${colors.orange}
+        format-discharging-underline = ''${colors.orange}
         format-discharging-padding = 1
 
         label-full = %percentage%%
         format-full = <ramp-capacity> <label-full>
-        format-full-underline = \${self.format-charging-underline}
-        format-full-overline = \${self.format-charging-underline}
+        format-full-underline = ''${self.format-charging-underline}
+        format-full-overline = ''${self.format-charging-underline}
         format-full-padding = 1
 
         ramp-capacity-0 = 
         ramp-capacity-1 = 
         ramp-capacity-2 = 
         ramp-capacity-3 = 
-        ramp-capacity-foreground = \${colors.foreground}
+        ramp-capacity-foreground = ''${colors.foreground}
 
         animation-charging-0 = 
         animation-charging-1 = 
         animation-charging-2 = 
         animation-charging-3 = 
         animation-charging-4 = 
-        animation-charging-foreground = \${colors.foreground}
+        animation-charging-foreground = ''${colors.foreground}
         animation-charging-framerate = 1000
 
         [module/temperature]
@@ -240,9 +247,9 @@ in
         interval = 5
 
         format = <ramp> <label>
-        format-underline = \${colors.orange}
+        format-underline = ''${colors.orange}
         format-warn = <ramp> <label-warn>
-        format-warn-underline = \${colors.red}
+        format-warn-underline = ''${colors.red}
 
         format-padding = 1
         format-warn-padding = 1
@@ -269,21 +276,21 @@ in
         ramp-coreload-5 = ▆
         ramp-coreload-6 = ▇
         ramp-coreload-7 = █
-        ramp-coreload-underline = \${colors.orange}
+        ramp-coreload-underline = ''${colors.orange}
 
         type = internal/cpu
         interval = 2
-        label = %{F\${colors.white} %percentage%%  
-        label-underline = \${colors.orange}
+        label = %{F''${colors.white} %percentage%%  
+        label-underline = ''${colors.orange}
         label-padding = 1
 
         [module/memory]
         type = internal/memory
         interval = 2
 
-        label = %{F\${colors.white} %percentage_used%%
-        label-underline = \${colors.orange}
-        label-foreground = \${colors.orange}
+        label = %{F''${colors.white} %percentage_used%%
+        label-underline = ''${colors.orange}
+        label-foreground = ''${colors.orange}
         label-padding = 1
 
         [module/wlan]
@@ -295,12 +302,12 @@ in
         format-disconnected-padding = 0
 
         format-connected = <label-connected>
-        format-connected-underline = \${colors.orange}
-        format-disconnected-underline = \${colors.gray}
+        format-connected-underline = ''${colors.orange}
+        format-disconnected-underline = ''${colors.gray}
 
         label-connected = %essid% 
         label-disconnected =
-        label-disconnected-foreground = \${colors.gray}
+        label-disconnected-foreground = ''${colors.gray}
 
 
         [module/eth]
@@ -311,13 +318,13 @@ in
         format-connected-padding = 1
         format-disconnected-padding = 0
 
-        format-connected-underline = \${colors.orange}
-        format-disconnected-underline = \${colors.gray}
+        format-connected-underline = ''${colors.orange}
+        format-disconnected-underline = ''${colors.gray}
 
         # label-connected =  %linkspeed%
         label-connected =   %downspeed:9%
         label-disconnected = 
-        label-disconnected-foreground = \${colors.white}
+        label-disconnected-foreground = ''${colors.white}
 
 
         [module/filesystem]
@@ -327,17 +334,17 @@ in
         mount-0 = /
 
         label-mounted =  %percentage_used%% %free%
-        label-mounted-underline = \${colors.orange}
+        label-mounted-underline = ''${colors.orange}
         label-mounted-padding = 1
 
         label-unmounted =
-        label-unmounted-foreground = \${colors.black}
+        label-unmounted-foreground = ''${colors.black}
 
         [module/menu0]
         type = custom/menu
 
         format = <label-toggle>
-        format-underline = \${colors.orange}
+        format-underline = ''${colors.orange}
         format-padding = 1
 
         label-open =   
@@ -352,7 +359,7 @@ in
         type = custom/script
         exec = ~/.bin/polybar/check-secure-tunnel.sh
         interval = 60
-        format-underline = \${colors.orange}
+        format-underline = ''${colors.orange}
         format-padding = 1
         format-prefix = \"%{T2}%{T-} \"
 
@@ -360,13 +367,13 @@ in
         type = custom/script
         exec = ~/.bin/polybar/timesheet.sh
         interval = 0
-        format-underline = \${colors.orange}
+        format-underline = ''${colors.orange}
         format-padding = 1
         format-prefix = \"%{T2} %{T-} \"
         tail = true
         click-right = kill -USR1 %pid%
 
-      ";
+      '';
     };
   };
 }
