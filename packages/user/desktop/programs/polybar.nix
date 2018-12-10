@@ -15,7 +15,8 @@ in
         mpdSupport = true;
       };
 
-      script = "polybar bar1 &; polybar bar2 &;";
+      script = "polybar bar2 &";
+
       extraConfig = ''
         [global/wm]
         margin-top = 5
@@ -58,7 +59,7 @@ in
         module-margin-right = 1
         module-margin-left = 1
 
-        #modules-right = cpu memory temperature filesystem wlan backlight volume battery date
+        modules-right = cpu memory temperature filesystem wlan backlight volume battery date
         modules-center = i3
 
         background = ''${colors.background}
@@ -96,11 +97,11 @@ in
         module-margin-right = 1
         module-margin-left = 1
 
-        #modules-right = cpu memory temperature filesystem wlan backlight volume battery date
+        #modules-right = filesystem wlan backlight volume battery date
         #modules-right = timesheet secure-tunnel volume date
         modules-right = volume date
         modules-center = i3
-        modules-left = eth wlan filesystem temperature memory cpu
+        modules-left = battery eth wlan filesystem temperature memory cpu
 
         background = ''${colors.background}
         foreground = ''${colors.foreground}
