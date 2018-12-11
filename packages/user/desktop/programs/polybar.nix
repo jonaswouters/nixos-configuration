@@ -45,7 +45,7 @@ in
         override-redirect = false
         wm_stack = i3
         width = 100%
-        height = 24
+        height = 34
         offset-x = 
         offset-y = 
 
@@ -75,15 +75,15 @@ in
         tray-maxsize = 16
         tray-padding = 0
 
-        font-0 = \"Hack Regular Nerd Font Complete:size=10;0\"
-        font-1 = \"Hack Regular Nerd Font Complete:size=14;0\"
+        font-0 = \"Hack Regular Nerd Font Complete:size=14;0\"
+        font-1 = \"Hack Regular Nerd Font Complete:size=18;0\"
 
         [bar/bar2]
         bottom = false
         override-redirect = false
         wm_stack = i3
         width = 100%
-        height = 24
+        height = 44
         offset-x = 
         offset-y = 
 
@@ -116,8 +116,8 @@ in
         tray-maxsize = 16
         tray-padding = 0
 
-        font-0 = \"Hack Nerd Font:size=10;0\"
-        font-1 = \"Hack Nerd Font:size=10;0\"
+        font-0 = \"Hack Nerd Font:size=14;0\"
+        font-1 = \"Hack Nerd Font:size=14;0\"
 
         [module/xwindow]
         type = internal/xwindow
