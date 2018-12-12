@@ -1,20 +1,31 @@
 { config, pkgs, ... }:
 
 {
-  home-manager.users.jonaswouters.home.packages = with pkgs; [
-    # fonts
-    crimson
-    inconsolata
-    mononoki
-    opensans-ttf
-    powerline-fonts
-    roboto
-    source-code-pro
-    corefonts
-    terminus_font
-    ubuntu_font_family
-    nerdfonts
+  fonts = {
+    fontconfig = {
+      enable = true;
+      antialias = true;
+      cache32Bit = true;
+      useEmbeddedBitmaps = true;
+      ultimate = {
+        enable = true;
+        substitutions = "combi";
+      };
+      defaultFonts = {
+        monospace = [ "Inconsolata Nerd Font" ];
+      };
+    };
 
+    enableDefaultFonts = true;
+    enableFontDir = true;
+    enableGhostscriptFonts = true;
+    fonts = with pkgs; [
+      nerdfonts
+    ];
+  };
+
+  
+  home-manager.users.jonaswouters.home.packages = with pkgs; [
     # character map viewer
     gucharmap
   ];

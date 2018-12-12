@@ -11,7 +11,7 @@ in
         i3GapsSupport = true;
         #pulseSupport = true;
         #iwSupport = true;
-        #githubSupport = true;
+        githubSupport = true;
         mpdSupport = true;
       };
 
@@ -75,8 +75,8 @@ in
         tray-maxsize = 16
         tray-padding = 0
 
-        font-0 = \"Hack Regular Nerd Font Complete:size=14;0\"
-        font-1 = \"Hack Regular Nerd Font Complete:size=18;0\"
+        font-0 = "Hack Regular Nerd Font Complete:size=14;0"
+        font-1 = "Hack Regular Nerd Font Complete:size=18;0"
 
         [bar/bar2]
         bottom = false
@@ -116,8 +116,8 @@ in
         tray-maxsize = 16
         tray-padding = 0
 
-        font-0 = \"Hack Nerd Font:size=14;0\"
-        font-1 = \"Hack Nerd Font:size=14;0\"
+        font-0 = "Hack Nerd Font:size=14;0"
+        font-1 = "Hack Nerd Font:size=14;0"
 
         [module/xwindow]
         type = internal/xwindow
@@ -362,7 +362,7 @@ in
         interval = 60
         format-underline = ''${colors.orange}
         format-padding = 1
-        format-prefix = \"%{T2}%{T-} \"
+        format-prefix = "%{T2}%{T-} "
 
         [module/timesheet]
         type = custom/script
@@ -370,10 +370,9 @@ in
         interval = 0
         format-underline = ''${colors.orange}
         format-padding = 1
-        format-prefix = \"%{T2} %{T-} \"
+        format-prefix = "%{T2} %{T-} "
         tail = true
         click-right = kill -USR1 %pid%
-
       '';
     };
   };
