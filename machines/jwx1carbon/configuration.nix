@@ -1,8 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib,... }:
 
 {
+  # Channels
+  #nix.nixPath = lib.mkDefault (lib.mkBefore [
+  #  "nixpkgs=https://nixos.org/channels/nixos-18.09"
+  #  "nixos-hardware=https://github.com/NixOS/nixos-hardware/archive/master.tar.gz"
+  #]);
+
   imports =
     [
+      <nixos-hardware/lenovo/thinkpad/x1/6th-gen>
       ../base-unstable.nix
       
       # Xserver
@@ -32,5 +39,20 @@
   networking = {
     hostName = "jwx1carbon";
     wireless.enable = true;
+  };
+
+  # ACPI
+  services.acpid = {
+    enable = true;
+  };
+
+  # Thinkpad x1 Backlight control via buttons
+  programs.light.enable = true;
+  services.actkbd = {
+    enable = true;
+    bindings = [
+      { keys = [ 224 ]; events = [ "key" ]; command = "/run/wrappers/bin/light -U 5"; }
+      { keys = [ 225 ]; events = [ "key" ]; command = "/run/wrappers/bin/light -A 5"; }
+    ];
   };
 }
