@@ -29,7 +29,4 @@
     mysqlUser = "";
     mysqlPassword = "";
   };
-
-  # Enable the OpenSSH server.
-  services.openssh.enable = true;
-  services.openssh.permitRootLogin = "yes";
+};
