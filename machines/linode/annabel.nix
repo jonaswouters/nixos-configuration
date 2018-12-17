@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ../base.nix
+      ../base-server.nix
     ];
 
   # Use the GRUB 2 boot loader.
