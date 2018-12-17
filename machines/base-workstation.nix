@@ -3,7 +3,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ../base-unstable.nix
+      ./base-unstable.nix
       ../hardware-configuration.nix
     ];
     
