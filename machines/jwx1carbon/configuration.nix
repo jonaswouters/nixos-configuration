@@ -10,7 +10,7 @@
   imports =
     [
       <nixos-hardware/lenovo/thinkpad/x1/6th-gen>
-      ../base-unstable.nix
+      ../base-workstation.nix
       
       # Xserver
       ../../packages/xserver.nix
