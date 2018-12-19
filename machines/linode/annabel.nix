@@ -4,6 +4,11 @@
   imports =
     [
       ../base-server.nix
+      
+      # Packages
+      ../../packages/common.nix
+      ../../packages/znc.nix
+      ../../packages/user/weechat.nix
     ];
 
   # Use the GRUB 2 boot loader.
