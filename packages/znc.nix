@@ -3,8 +3,8 @@
 {
   services.znc = {
     enable = true;
-    useLegacyConfig = false;
     ## Enabled in next version 
+    # useLegacyConfig = false;
     # config = 
     # {
     #   LoadModule = [ "webadmin" "adminlog" ];
