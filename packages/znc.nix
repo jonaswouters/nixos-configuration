@@ -8,8 +8,8 @@
     LoadModule = [ "webadmin" "adminlog" ];
     User.paul = {
       Admin = true;
-      Nick = "jonaswouters
-      AltNick = "zertox
+      Nick = "jonaswouters";
+      AltNick = "zertox";
       LoadModule = [ "chansaver" "controlpanel" ];
       Network.freenode = {
         Server = "chat.freenode.net +6697";
