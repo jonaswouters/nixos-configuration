@@ -6,7 +6,7 @@
     
     # passBlock with `nix-shell -p znc --command "znc --makepass"`.
     # and place it inside secrets.nix
-	  passBlock = (import ../secrets.nix).zncPassBlock;
+    passBlock = (import ../secrets.nix).zncPassBlock;
     
     ## Enabled in next version 
     # useLegacyConfig = false;
