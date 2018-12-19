@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  secrets = (import ../secrets.nix);
+in  
 {
   services.znc = {
     enable = true;
@@ -16,7 +19,7 @@
           port = 6697;
           useSSL = true;
           userName = "jonaswouters";
-          password = (import ../secrets.nix).ircPassword;
+          password = secrets.ircPassword;
         };
       };
       
@@ -25,7 +28,7 @@
     
       # passBlock with `nix-shell -p znc --command "znc --makepass"`.
       # and place it inside secrets.nix
-      passBlock = (import ../secrets.nix).zncPassBlock;
+      passBlock = secrets.zncPassBlock;
       
     };
     
