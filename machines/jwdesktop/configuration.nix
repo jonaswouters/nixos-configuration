@@ -2,9 +2,18 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./users.nix
+    [
+      ../base-workstation.nix
+      
+      # Xserver
+      ../../packages/xserver.nix
+      ../../packages/user/desktop/i3.nix
+      
+      # Packages
+      ../../packages/user/common.nix
+      ../../packages/user/development.nix
+      ../../packages/user/fonts.nix
+      
     ];
     
   # Boot settings
