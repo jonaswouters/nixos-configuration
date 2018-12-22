@@ -5,19 +5,18 @@
     [
       ../base-workstation.nix
       
-      # Xserver
-      ../../packages/xserver.nix
-      ../../packages/user/desktop/i3.nix
-      
       # Packages
       ../../packages/user/common.nix
       ../../packages/user/development.nix
       ../../packages/user/fonts.nix
-      
+
+      # Xserver
+      ../../packages/xserver.nix
+      ../../packages/user/desktop/i3.nix
     ];
     
   # Boot settings
-  
+  boot.loader.systemd-boot.enable = true;  
   
   # This value determines the NixOS release with which your
   # system is to be compatible, in order to avoid breaking
