@@ -1,8 +1,15 @@
 { config, pkgs, ... }:
 
+let
+  secrets = (import ../../private/secrets.nix);
+in
 {
   imports =
     [
+      # Drives
+      ../../private/jwdesktop-drives.nix
+
+      # Base
       ../base-workstation.nix
       
       # Packages
@@ -13,6 +20,9 @@
       # Xserver
       ../../packages/xserver.nix
       ../../packages/user/desktop/i3.nix
+
+      # Media
+      ../../private/media.nix
     ];
     
   # Boot settings

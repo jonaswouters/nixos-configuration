@@ -1,7 +1,9 @@
 { config, pkgs, ... }:
-
+let
+  secrets = (import ../../../private/secrets.nix);
+in
 {
-  home-manager.users.jonaswouters = {
+  home-manager.users.${secrets.username} = {
     xsession = {
       enable = true;
       

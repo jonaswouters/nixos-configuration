@@ -1,6 +1,0 @@
-{
-  ircPassword = "";
-  zncPassBlock = ''
-  
-  '';
-}

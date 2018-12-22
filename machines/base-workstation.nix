@@ -6,6 +6,7 @@
       ./base-unstable.nix
     ];
     
-    # Enable exfat for mounted drives
+    # Enable exfat and ntfs for mounted drives
     boot.extraModulePackages = [ config.boot.kernelPackages.exfat-nofuse ];
+    boot.supportedFilesystems = [ "ntfs" ];
 }

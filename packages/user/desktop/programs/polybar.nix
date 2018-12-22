@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }:
 
 let
-
+  secrets = (import ../../../../private/secrets.nix);
 in
 {
-  home-manager.users.jonaswouters = {
+  home-manager.users.${secrets.username} = {
      services.polybar = {
       enable = true;
       package = pkgs.polybar.override {

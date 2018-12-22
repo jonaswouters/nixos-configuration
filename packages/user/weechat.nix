@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
+let
+  secrets = (import ../../private/secrets.nix);
+in
 {
-  home-manager.users.jonaswouters.home.packages = with pkgs; [
+  home-manager.users.${secrets.username}.home.packages = with pkgs; [
       weechat
   ];
 }

@@ -1,10 +1,11 @@
-  { config, pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   modifier = "Mod4";
   move = "50px";
   terminal = "termite";
   dpi = "150";
+  secrets = (import ../../../private/secrets.nix);
 in
 {
   imports =
@@ -15,7 +16,7 @@ in
       ./programs/rofi.nix
       ./programs/polybar.nix
     ];
-  home-manager.users.jonaswouters = {
+  home-manager.users.${secrets.username} = {
      xsession = {
       enable = true;
       

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  secrets = (import ../secrets.nix);
+  secrets = (import ../private/secrets.nix);
 in  
 {
   services.znc = {
@@ -18,13 +18,13 @@ in
           server = "chat.freenode.net";
           port = 6697;
           useSSL = true;
-          userName = "jonaswouters";
+          userName = secrets.username;
           password = secrets.ircPassword;
         };
       };
       
       modules = [ "adminlog" "log" ];
-      nick = "jonaswouters";
+      nick = secrets.username;
     
       # passBlock with `nix-shell -p znc --command "znc --makepass"`.
       # and place it inside secrets.nix
@@ -39,7 +39,7 @@ in
     #   LoadModule = [ "webadmin" "adminlog" ];
     #   User.paul = {
     #     Admin = true;
-    #     Nick = "jonaswouters";
+    #     Nick = secrets.username;
     #     AltNick = "zertox";
     #     LoadModule = [ "chansaver" "controlpanel" ];
     #     Network.freenode = {
