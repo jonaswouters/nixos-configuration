@@ -21,8 +21,15 @@ in
       ../../packages/xserver.nix
       ../../packages/user/desktop/i3.nix
 
+      # Audio
+      ../../packages/audio.nix
+      ../../packages/user/desktop/programs/audio.nix
+
       # Media
       ../../private/media.nix
+
+      # Games
+      ../../packages/user/desktop/programs/games.nix
     ];
     
   # Boot settings
@@ -39,4 +46,11 @@ in
   networking = {
     hostName = "jwdesktop";
   };
+
+  # Update settings
+  system.autoUpgrade.enable = true;
+
+  # 3D settings
+  hardware.opengl.driSupport32Bit = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
 }

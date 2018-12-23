@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
+  settings = (import ../../../../private/settings.nix);
   secrets = (import ../../../../private/secrets.nix);
 in
 {
@@ -45,7 +46,7 @@ in
         override-redirect = false
         wm_stack = i3
         width = 100%
-        height = 34
+        height = ${settings.desktop.polybar.height}
         offset-x = 
         offset-y = 
 
@@ -75,15 +76,15 @@ in
         tray-maxsize = 16
         tray-padding = 0
 
-        font-0 = "Hack Regular Nerd Font Complete:size=14;0"
-        font-1 = "Hack Regular Nerd Font Complete:size=18;0"
+        font-0 = "Hack Regular Nerd Font Complete:size=${settings.desktop.polybar.font1-size};0"
+        font-1 = "Hack Regular Nerd Font Complete:size=${settings.desktop.polybar.font2-size};0"
 
         [bar/bar2]
         bottom = false
         override-redirect = false
         wm_stack = i3
         width = 100%
-        height = 44
+        height = ${settings.desktop.polybar.height}
         offset-x = 
         offset-y = 
 
@@ -116,8 +117,8 @@ in
         tray-maxsize = 16
         tray-padding = 0
 
-        font-0 = "Hack Nerd Font:size=14;0"
-        font-1 = "Hack Nerd Font:size=14;0"
+        font-0 = "Hack Nerd Font:size=${settings.desktop.polybar.font1-size};0"
+        font-1 = "Hack Nerd Font:size=${settings.desktop.polybar.font2-size};0"
 
         [module/xwindow]
         type = internal/xwindow

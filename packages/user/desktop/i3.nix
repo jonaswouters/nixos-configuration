@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }:
 
 let
+  settings = (import ../../../private/settings.nix);
   modifier = "Mod4";
   move = "50px";
   terminal = "termite";
-  dpi = "150";
   secrets = (import ../../../private/secrets.nix);
 in
 {
@@ -27,7 +27,7 @@ in
           modifier = "${modifier}";
   
           startup = [
-            { command = "xrandr --dpi ${dpi}"; }
+            { command = "xrandr --dpi ${settings.desktop.dpi}"; }
             { command = "systemctl --user restart polybar"; always = true; notification = false; }
           ];
 
