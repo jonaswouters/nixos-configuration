@@ -11,6 +11,9 @@ in
 
       # Base
       ../base-workstation.nix
+
+      # VFIO (after initial build)
+      # ../../vfio.nix
       
       # Packages
       ../../packages/user/common.nix
@@ -34,6 +37,9 @@ in
     
   # Boot settings
   boot.loader.systemd-boot.enable = true;  
+
+  # VFIO
+  boot.kernelParams = [ "intel_iommu=on" ];
   
   # This value determines the NixOS release with which your
   # system is to be compatible, in order to avoid breaking
@@ -49,6 +55,9 @@ in
 
   # Update settings
   system.autoUpgrade.enable = true;
+
+  # I don't like this
+  nixpkgs.config.allowBroken = true;
 
   # 3D settings
   hardware.opengl.driSupport32Bit = true;

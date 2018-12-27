@@ -23,4 +23,7 @@
       enable = true;
       enableSSHSupport = true;
     };
+
+        # Set channel to unstable
+    system.autoUpgrade.channel = "https://nixos.org/channels/nixos-stable/";
 }

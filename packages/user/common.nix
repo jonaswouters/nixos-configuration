@@ -3,6 +3,11 @@ let
   secrets = (import ../../private/secrets.nix);
 in
 {
+  imports =
+  [
+    # Programs
+    ./git.nix
+  ];
   home-manager.users.${secrets.username}.home.packages = with pkgs; [
     insync
     keybase

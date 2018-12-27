@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./base-unstable.nix
+      ./base.nix
     ];
     
     # Enable exfat and ntfs for mounted drives
