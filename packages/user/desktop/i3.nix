@@ -27,7 +27,7 @@ in
           modifier = "${modifier}";
   
           startup = [
-            { command = "xrandr --dpi ${settings.desktop.dpi}"; }
+            { command = settings.desktop.xrandr-command; }
             { command = "systemctl --user restart polybar"; always = true; notification = false; }
           ];
 

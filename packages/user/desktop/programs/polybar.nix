@@ -16,7 +16,7 @@ in
         mpdSupport = true;
       };
 
-      script = "polybar bar2 &";
+      script = "polybar bar1 & polybar bar2 &";
 
       extraConfig = ''
         [global/wm]
@@ -42,6 +42,8 @@ in
         alert = #db2f2f
 
         [bar/bar1]
+        monitor = ${settings.desktop.polybar.bar1-monitor}
+
         bottom = false
         override-redirect = false
         wm_stack = i3
@@ -60,8 +62,9 @@ in
         module-margin-right = 1
         module-margin-left = 1
 
-        modules-right = cpu memory temperature filesystem wlan backlight volume battery date
+        modules-left = battery eth wlan filesystem temperature memory cpu
         modules-center = i3
+        modules-right = cpu memory temperature filesystem wlan backlight volume battery date
 
         background = ''${colors.background}
         foreground = ''${colors.foreground}
@@ -80,6 +83,7 @@ in
         font-1 = "Hack Regular Nerd Font Complete:size=${settings.desktop.polybar.font2-size};0"
 
         [bar/bar2]
+        monitor = ${settings.desktop.polybar.bar2-monitor}
         bottom = false
         override-redirect = false
         wm_stack = i3
@@ -100,9 +104,7 @@ in
 
         #modules-right = filesystem wlan backlight volume battery date
         #modules-right = timesheet secure-tunnel volume date
-        modules-right = volume date
         modules-center = i3
-        modules-left = battery eth wlan filesystem temperature memory cpu
 
         background = ''${colors.background}
         foreground = ''${colors.foreground}
