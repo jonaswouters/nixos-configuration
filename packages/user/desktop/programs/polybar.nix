@@ -79,8 +79,8 @@ in
         tray-maxsize = 16
         tray-padding = 0
 
-        font-0 = "Hack Nerd Font:size=${settings.desktop.polybar.font1-size};0"
-        font-1 = "Hack Nerd Font:size=${settings.desktop.polybar.font2-size};0"
+        font-0 = "Hack Nerd Font Mono:size=${settings.desktop.polybar.font1-size};0"
+        font-1 = "Hack Nerd Font Mono:size=${settings.desktop.polybar.font2-size};0"
 
         [bar/bar2]
         monitor = ${settings.desktop.polybar.bar2-monitor}
@@ -120,8 +120,8 @@ in
         tray-maxsize = 16
         tray-padding = 0
 
-        font-0 = "Hack Nerd Font:size=${settings.desktop.polybar.font1-size};0"
-        font-1 = "Hack Nerd Font:size=${settings.desktop.polybar.font2-size};0"
+        font-0 = "Hack Nerd Font Mono:size=${settings.desktop.polybar.font1-size};0"
+        font-1 = "Hack Nerd Font Mono:size=${settings.desktop.polybar.font2-size};0"
 
         [module/xwindow]
         type = internal/xwindow
