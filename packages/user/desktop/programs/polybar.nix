@@ -79,8 +79,8 @@ in
         tray-maxsize = 16
         tray-padding = 0
 
-        font-0 = "Hack Regular Nerd Font Complete:size=${settings.desktop.polybar.font1-size};0"
-        font-1 = "Hack Regular Nerd Font Complete:size=${settings.desktop.polybar.font2-size};0"
+        font-0 = "Hack Nerd Font:size=${settings.desktop.polybar.font1-size};0"
+        font-1 = "Hack Nerd Font:size=${settings.desktop.polybar.font2-size};0"
 
         [bar/bar2]
         monitor = ${settings.desktop.polybar.bar2-monitor}
@@ -104,6 +104,7 @@ in
 
         #modules-right = filesystem wlan backlight volume battery date
         #modules-right = timesheet secure-tunnel volume date
+
         modules-center = i3
 
         background = ''${colors.background}
