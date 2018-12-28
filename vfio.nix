@@ -10,9 +10,12 @@ in
     
   # These modules are required for PCI passthrough, and must come before early modesetting stuff
   boot.kernelModules = [ "vfio" "vfio_iommu_type1" "vfio_pci" "vfio_virqfd" ];
+
+  # Prevent nvidia drivers from loading
+  boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
   
   # CHANGE: Don't forget to put your own PCI IDs here
-  boot.extraModprobeConfig ="options vfio-pci ids=1002:67b1,1002:aac8";
+  boot.extraModprobeConfig ="options vfio-pci ids=10de:1b06,10de:10ef";
   
   environment.systemPackages = with pkgs; [
     virtmanager

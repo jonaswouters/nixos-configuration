@@ -13,7 +13,7 @@ in
       ../base-workstation.nix
 
       # VFIO (after initial build)
-      # ../../vfio.nix
+      ../../vfio.nix
       
       # Packages
       ../../packages/user/common.nix
@@ -37,9 +37,15 @@ in
     
   # Boot settings
   boot.loader.systemd-boot.enable = true;  
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.kernelModules = [ "i915" ];
+
+  # Use latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # VFIO
-  boot.kernelParams = [ "intel_iommu=on" ];
+  services.xserver.videoDrivers = [ "modesetting" ];
+  boot.kernelParams = [ "intel_iommu=on" "enable_gvt=1" "i915.enable_fbc=1" "i915.enable_guc=3" ];
   
   # This value determines the NixOS release with which your
   # system is to be compatible, in order to avoid breaking
@@ -56,10 +62,11 @@ in
   # Update settings
   system.autoUpgrade.enable = true;
 
-  # I don't like this
-  nixpkgs.config.allowBroken = true;
-
   # 3D settings
-  hardware.opengl.driSupport32Bit = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+    extraPackages = [ pkgs.vaapiIntel ];
+    extraPackages32 = [ pkgs.vaapiIntel ];
+  };
 }
