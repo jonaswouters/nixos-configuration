@@ -43,9 +43,18 @@ in
   # Use latest kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # VFIO
+  # VFIO and graphic card settings
   services.xserver.videoDrivers = [ "modesetting" ];
   boot.kernelParams = [ "intel_iommu=on" "enable_gvt=1" "i915.enable_fbc=1" "i915.enable_guc=3" ];
+  boot.extraModprobeConfig ="options vfio-pci ids=10de:1b06,10de:10ef";
+
+  # 3D settings
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+    extraPackages = [ pkgs.vaapiIntel ];
+    extraPackages32 = [ pkgs.vaapiIntel ];
+  };
   
   # This value determines the NixOS release with which your
   # system is to be compatible, in order to avoid breaking
@@ -62,11 +71,4 @@ in
   # Update settings
   system.autoUpgrade.enable = true;
 
-  # 3D settings
-  hardware.opengl = {
-    enable = true;
-    driSupport32Bit = true;
-    extraPackages = [ pkgs.vaapiIntel ];
-    extraPackages32 = [ pkgs.vaapiIntel ];
-  };
 }

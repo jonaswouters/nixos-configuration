@@ -15,7 +15,8 @@ in
   boot.blacklistedKernelModules = [ "nouveau" "nvidia" ];
   
   # CHANGE: Don't forget to put your own PCI IDs here
-  boot.extraModprobeConfig ="options vfio-pci ids=10de:1b06,10de:10ef";
+  # boot.extraModprobeConfig ="options vfio-pci ids=10de:1b06,10de:10ef";
+  # Add this to the machine configuration
   
   environment.systemPackages = with pkgs; [
     virtmanager
