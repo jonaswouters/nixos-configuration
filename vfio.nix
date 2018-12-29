@@ -24,7 +24,13 @@ in
     OVMF
   ];
   
-  virtualisation.libvirtd.enable = true;
+  # Enable virtualisation
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemuOvmf = true;
+    };
+  };
   
   # libvrtd members
   users.groups.libvirtd.members = [ "root" "${secrets.username}"];
