@@ -88,7 +88,7 @@ in
         override-redirect = false
         wm_stack = i3
         width = 100%
-        height = ${settings.desktop.polybar.height}
+        height = ${settings.desktop.polybar.height} 
         offset-x = 
         offset-y = 
 
