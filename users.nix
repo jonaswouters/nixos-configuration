@@ -21,6 +21,7 @@ in
       "networkmanager"
       "video"
       "wheel"
+      "libvirtd"
     ];
     openssh.authorizedKeys.keys = [
       secrets.sshKey
