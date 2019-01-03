@@ -10,6 +10,4 @@ in
     slack
     ranger
   ];
-
-
 }
