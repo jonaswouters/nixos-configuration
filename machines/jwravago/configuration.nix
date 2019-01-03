@@ -16,6 +16,7 @@ in
       ../../packages/user/common.nix
       ../../packages/user/development.nix
       ../../packages/user/fonts.nix
+      ../../packages/user/fish.nix
 
       # Xserver
       ../../packages/xserver.nix
@@ -60,4 +61,10 @@ in
   # Update settings
   system.autoUpgrade.enable = true;
 
+  # Overrides
+  programs.fish = {
+    shellInit = ''
+      ${builtins.readFile ../../packages/user/fish/ravago.fish }
+    '';
+  };
 }

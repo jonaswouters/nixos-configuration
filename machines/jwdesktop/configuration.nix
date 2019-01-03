@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs,... }:
 
 let
   secrets = (import ../../private/secrets.nix);
@@ -19,6 +19,7 @@ in
       ../../packages/user/common.nix
       ../../packages/user/development.nix
       ../../packages/user/fonts.nix
+      ../../packages/user/fish.nix
 
       # Xserver
       ../../packages/xserver.nix
@@ -113,5 +114,4 @@ in
 
   # Update settings
   system.autoUpgrade.enable = true;
-
 }
