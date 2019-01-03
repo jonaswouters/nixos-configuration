@@ -9,8 +9,17 @@
       ../packages/common.nix
     ];
     
-    # Alow unfree packages
-    nixpkgs.config.allowUnfree = true;
+    nixpkgs.config = {
+       # Alow unfree packages
+      allowUnfree = true;
+
+      # Create an alias for the unstable channel
+      packageOverrides = pkgs: {
+        unstable = import <unstable> {
+          config = config.nixpkgs.config;
+        };
+      };
+    };
     
     # Enable OpenSSH
     services.openssh = {
