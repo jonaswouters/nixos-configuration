@@ -15,8 +15,5 @@
     tree
     wget
     curl
-    
-    # gpg & ssh
-    gnupg
   ];
 }

@@ -12,6 +12,9 @@ in
       # Base
       ../base-workstation.nix
 
+      # Yubikey
+      ../../yubikey.nix
+
       # VFIO (after initial build)
       ../../vfio.nix
       
