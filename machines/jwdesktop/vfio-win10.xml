@@ -1,6 +1,11 @@
 <domain type='kvm'>
   <name>win10</name>
   <uuid>63a2ec8e-aaef-4484-9dcd-e2d7cf60ba60</uuid>
+  <metadata>
+    <libosinfo:libosinfo xmlns:libosinfo="http://libosinfo.org/xmlns/libvirt/domain/1.0">
+      <libosinfo:os id="http://microsoft.com/win/10"/>
+    </libosinfo:libosinfo>
+  </metadata>
   <memory unit='KiB'>16384000</memory>
   <currentMemory unit='KiB'>16384000</currentMemory>
   <vcpu placement='static'>8</vcpu>
@@ -30,6 +35,8 @@
       <relaxed state='on'/>
       <vapic state='on'/>
       <spinlocks state='on' retries='8191'/>
+      <synic state='on'/>
+      <stimer state='on'/>
       <vendor_id state='on' value='whatever'/>
     </hyperv>
     <kvm>
@@ -41,9 +48,7 @@
     <topology sockets='1' cores='4' threads='2'/>
   </cpu>
   <clock offset='localtime'>
-    <timer name='rtc' tickpolicy='catchup'/>
-    <timer name='pit' tickpolicy='delay'/>
-    <timer name='hpet' present='no'/>
+    <timer name='hpet' present='yes'/>
     <timer name='hypervclock' present='yes'/>
   </clock>
   <on_poweroff>destroy</on_poweroff>
@@ -65,7 +70,7 @@
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
       <source file='/var/lib/libvirt/images/virtio-win-0.1.160.iso'/>
-      <target dev='sdb' bus='sata'/>
+      <target dev='sdb' bus='scsi'/>
       <readonly/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
@@ -83,9 +88,6 @@
     <controller type='usb' index='0' model='ich9-uhci3'>
       <master startport='4'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x1d' function='0x2'/>
-    </controller>
-    <controller type='sata' index='0'>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
     </controller>
     <controller type='pci' index='0' model='pcie-root'/>
     <controller type='pci' index='1' model='pcie-root-port'>
@@ -127,17 +129,35 @@
       <target chassis='8' port='0xe'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x6'/>
     </controller>
+    <controller type='pci' index='9' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='9' port='0xf'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x7'/>
+    </controller>
+    <controller type='pci' index='10' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='10' port='0x10'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x0' multifunction='on'/>
+    </controller>
+    <controller type='pci' index='11' model='pcie-root-port'>
+      <model name='pcie-root-port'/>
+      <target chassis='11' port='0x11'/>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x02' function='0x1'/>
+    </controller>
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
     <controller type='scsi' index='0' model='virtio-scsi'>
       <address type='pci' domain='0x0000' bus='0x08' slot='0x00' function='0x0'/>
     </controller>
+    <controller type='sata' index='0'>
+      <address type='pci' domain='0x0000' bus='0x00' slot='0x1f' function='0x2'/>
+    </controller>
     <interface type='network'>
       <mac address='52:54:00:c1:e3:3a'/>
       <source network='default'/>
-      <model type='rtl8139'/>
-      <address type='pci' domain='0x0000' bus='0x02' slot='0x01' function='0x0'/>
+      <model type='virtio'/>
+      <address type='pci' domain='0x0000' bus='0x09' slot='0x00' function='0x0'/>
     </interface>
     <serial type='pty'>
       <target type='isa-serial' port='0'>
@@ -165,18 +185,18 @@
       </source>
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
     </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <source>
-        <address domain='0x0000' bus='0x08' slot='0x00' function='0x0'/>
-      </source>
-      <address type='pci' domain='0x0000' bus='0x07' slot='0x00' function='0x0'/>
-    </hostdev>
     <hostdev mode='subsystem' type='usb' managed='yes'>
       <source>
         <vendor id='0x046d'/>
         <product id='0xc539'/>
       </source>
-      <address type='usb' bus='0' port='1'/>
+      <address type='usb' bus='0' port='2'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x08' slot='0x00' function='0x0'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x07' slot='0x00' function='0x0'/>
     </hostdev>
     <redirdev bus='usb' type='spicevmc'>
       <address type='usb' bus='0' port='4'/>
@@ -187,6 +207,11 @@
     <memballoon model='virtio'>
       <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
     </memballoon>
+    <shmem name='looking-glass'>
+      <model type='ivshmem-plain'/>
+      <size unit='M'>64</size>
+      <address type='pci' domain='0x0000' bus='0x02' slot='0x02' function='0x0'/>
+    </shmem>
   </devices>
 </domain>
 

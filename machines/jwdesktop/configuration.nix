@@ -61,7 +61,7 @@ in
     # Alternative binding
     # Load the nvidia driver at startup, but make sure the vfio-pci is available for switching
     # Nvidia driver is for fan control
-    #postBootCommands = ''
+    postBootCommands = ''
     #  DEVS="0000:01:00.0 0000:01:00.1"
     #
     #  for DEV in $DEVS; do
@@ -69,11 +69,27 @@ in
     #  done
     #  modprobe -i nvidia
     #  modprobe -i vfio-pci
-    #'';
+
+    #  # Setup Looking Glass shared memory object
+    #  touch /dev/shm/looking-glass
+    #  chown jonaswouters:kvm /dev/shm/looking-glass
+    #  chmod 660 /dev/shm/looking-glass
+    '';
   };
 
   # VFIO and graphic card settings
   services.xserver.videoDrivers = [ "modesetting" ];
+
+  # VFIO Looking-glass service
+  systemd.services.sharedMem = {
+    description = "shared memory for looking glass";
+    wantedBy = [ "multi-user.target" ];
+    script = ''
+      touch /dev/shm/looking-glass
+      chown ${secrets.username}:libvirtd /dev/shm/looking-glass
+      chmod 660 /dev/shm/looking-glass
+    '';
+  };
 
   # 3D settings
   hardware.opengl = {

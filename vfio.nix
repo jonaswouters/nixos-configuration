@@ -1,6 +1,7 @@
 {config, pkgs, ... }:
 let
   secrets = (import ./private/secrets.nix);
+  unstable = import <unstable> {};
 in
 {  
   ## PUT THIS IN YOUR MACHINE CONFIG
@@ -32,7 +33,7 @@ in
   #  # Alternative binding
   #  # Load the nvidia driver at startup, but make sure the vfio-pci is available for switching
   #  # Nvidia driver is for fan control
-  #  #postBootCommands = ''
+  #  postBootCommands = ''
   #  #  DEVS="0000:01:00.0 0000:01:00.1"
   #  #
   #  #  for DEV in $DEVS; do
@@ -40,13 +41,19 @@ in
   #  #  done
   #  #  modprobe -i nvidia
   #  #  modprobe -i vfio-pci
-  #  #'';
+
+  #  # Setup Looking Glass shared memory object
+  #  touch /dev/shm/looking-glass
+  #  chown john:kvm /dev/shm/looking-glass
+  #  chmod 660 /dev/shm/looking-glass
+  #  '';
   #};
   
   environment.systemPackages = with pkgs; [
-    virtmanager
-    qemu
-    OVMF
+    unstable.virtmanager
+    unstable.qemu
+    unstable.OVMF
+    unstable.looking-glass-client
   ];
   
   # Enable virtualisation
@@ -54,6 +61,7 @@ in
     libvirtd = {
       enable = true;
       qemuOvmf = true;
+      qemuPackage = unstable.qemu;
     };
   };
   
@@ -67,4 +75,5 @@ in
     nvram = [ "${pkgs.OVMF}/FV/OVMF.fd:${pkgs.OVMF}/FV/OVMF_VARS.fd" ]
   '';
 
+  networking.firewall.trustedInterfaces = [ "virbr1" ];
 }
