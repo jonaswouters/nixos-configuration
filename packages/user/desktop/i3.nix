@@ -41,7 +41,7 @@ in
             "${modifier}+Return" = "exec ${terminal}";
             
             "${modifier}+d" = "exec rofi -show drun -show-icons -display-drun \"Launcher\"";
-            "${modifier}+shift+l" = "exec i3lock-pixeled";
+            "${modifier}+shift+l" = "exec i3lock-pixeled ";
 
             "${modifier}+Shift+q" = "kill";
 
