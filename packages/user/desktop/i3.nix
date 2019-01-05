@@ -16,8 +16,12 @@ in
       ./programs/rofi.nix
       ./programs/polybar.nix
     ];
+
   home-manager.users.${secrets.username} = {
-     xsession = {
+    home.packages = with pkgs; [
+      unstable.i3lock-pixeled
+    ];
+    xsession = {
       enable = true;
       
       windowManager.i3 = {
@@ -37,6 +41,8 @@ in
             "${modifier}+Return" = "exec ${terminal}";
             
             "${modifier}+d" = "exec rofi -show drun -show-icons -display-drun \"Launcher\"";
+            "${modifier}+shift+l" = "exec i3lock-pixeled";
+
             "${modifier}+Shift+q" = "kill";
 
             "${modifier}+Left" = "focus left";
