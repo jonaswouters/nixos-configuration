@@ -15,5 +15,8 @@ in
     
     # Visual Studio Code
     unstable.vscode
+
+    # Node
+    unstable.nodejs-10_x
   ];
 }
