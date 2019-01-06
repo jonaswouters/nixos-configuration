@@ -14,7 +14,7 @@ in
           channels = [
             "nixos"
           ];
-          modules = [ "log" "simple_away" ];
+          modules = [ "log" "simple_away" "controlpanel" "nickserv" "keepnick" ];
           server = "chat.freenode.net";
           port = 6697;
           useSSL = true;
