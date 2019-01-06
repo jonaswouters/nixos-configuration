@@ -23,7 +23,7 @@ in
         };
       };
       
-      modules = [ "adminlog" "log" ];
+      modules = [ "adminlog" "log" "webadmin" ];
       nick = secrets.username;
     
       # passBlock with `nix-shell -p znc --command "znc --makepass"`.
