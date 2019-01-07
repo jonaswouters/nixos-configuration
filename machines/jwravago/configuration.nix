@@ -12,11 +12,18 @@ in
       # Base
       ../base-workstation.nix
       
+      # Yubikey
+      ../../yubikey.nix
+      
       # Packages
       ../../packages/user/common.nix
       ../../packages/user/development.nix
       ../../packages/user/fonts.nix
       ../../packages/user/fish.nix
+
+      # Ravago specific
+      ../../packages/samba.nix
+      ../../packages/user/desktop/programs/citrix-receiver.nix
 
       # Xserver
       ../../packages/xserver.nix
