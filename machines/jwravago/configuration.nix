@@ -20,6 +20,7 @@ in
       ../../packages/user/development.nix
       ../../packages/user/fonts.nix
       ../../packages/user/fish.nix
+      ../../packages/user/rescuetime.nix
 
       # Ravago specific
       ../../packages/samba.nix

@@ -18,5 +18,8 @@ in
 
     # Node
     unstable.nodejs-10_x
+
+    # files
+    filezilla
   ];
 }
