@@ -24,6 +24,7 @@ in
       ../../packages/user/fonts.nix
       ../../packages/user/fish.nix
       ../../packages/user/rescuetime.nix
+      ../../packages/user/insync.nix
 
       # Xserver
       ../../packages/xserver.nix

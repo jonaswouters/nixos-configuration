@@ -15,5 +15,6 @@
     tree
     wget
     curl
+    tmux
   ];
 }

@@ -9,7 +9,6 @@ in
     ./git.nix
   ];
   home-manager.users.${secrets.username}.home.packages = with pkgs; [
-    insync
     keybase
   ];
 }
