@@ -17,5 +17,8 @@ in
 
     # screenshots
     shutter
+
+    # Diff
+    gnome3.meld
   ];
 }

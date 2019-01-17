@@ -16,5 +16,7 @@
     wget
     curl
     tmux
+    ncdu # Disk usage
+    ripgrep # Better than grep
   ];
 }
