@@ -9,3 +9,6 @@ set PATH $HOME/.local/bin $PATH
 set -xg NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
 set -xg NPM_CONFIG_PREFIX $XDG_CONFIG_HOME/npm/global
 set PATH $NPM_CONFIG_PREFIX/bin $PATH
+
+# TERMINAL
+set -xg TERMINAL xterm-color

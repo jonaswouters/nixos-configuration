@@ -23,8 +23,9 @@ in
       ../../packages/user/development.nix
       ../../packages/user/fonts.nix
       ../../packages/user/fish.nix
-      ../../packages/user/rescuetime.nix
+      #../../packages/user/rescuetime.nix
       ../../packages/user/insync.nix
+      ../../packages/user/desktop/programs/kitty.nix
 
       # Xserver
       ../../packages/xserver.nix

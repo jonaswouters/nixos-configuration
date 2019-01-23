@@ -4,7 +4,8 @@ let
   settings = (import ../../../private/settings.nix);
   modifier = "Mod4";
   move = "50px";
-  terminal = "termite";
+  terminal = "kitty";
+  browser = "google-chrome-stable";
   secrets = (import ../../../private/secrets.nix);
 in
 {
@@ -39,6 +40,7 @@ in
 
           keybindings = {
             "${modifier}+Return" = "exec ${terminal}";
+            "${modifier}+b" = "exec ${browser}";
             
             "${modifier}+d" = "exec rofi -show drun -show-icons -display-drun \"Launcher\"";
             "${modifier}+shift+l" = "exec i3lock-pixeled ";
