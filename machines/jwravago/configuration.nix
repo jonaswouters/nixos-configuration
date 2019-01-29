@@ -21,6 +21,7 @@ in
       ../../packages/user/fonts.nix
       ../../packages/user/fish.nix
       ../../packages/user/insync.nix
+      ../../packages/user/desktop/programs/kitty.nix
 
       # Ravago specific
       ../../packages/samba.nix
