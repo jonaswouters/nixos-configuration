@@ -26,6 +26,13 @@ in
       ../../packages/samba.nix
       ../../packages/user/desktop/programs/citrix-receiver.nix
 
+      # Audio
+      ../../packages/audio.nix
+      ../../packages/user/desktop/programs/audio.nix
+
+      # Bluetooth 
+      ../../packages/bluetooth.nix
+
       # Xserver
       ../../packages/xserver.nix
       ../../packages/user/desktop/i3.nix

@@ -7,5 +7,9 @@ in
   hardware.pulseaudio = {
     enable = true;
     support32Bit = true; 
+    package = pkgs.pulseaudioFull;
+
+    # Extra bluetooth packages
+    # extraModules = [ pkgs.pulseaudio-modules-bt ];
   };
 }

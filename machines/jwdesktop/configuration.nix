@@ -35,6 +35,9 @@ in
       ../../packages/audio.nix
       ../../packages/user/desktop/programs/audio.nix
 
+      # Bluetooth 
+      ../../packages/bluetooth.nix
+
       # Media
       ../../private/media.nix
 
