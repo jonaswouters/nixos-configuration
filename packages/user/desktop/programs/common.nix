@@ -10,7 +10,7 @@ in
     
     # chat
     spotify
-    discord
+    #discord
     slack
     
     # file managers
