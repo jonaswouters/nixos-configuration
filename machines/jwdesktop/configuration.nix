@@ -20,6 +20,7 @@ in
       
       # Packages
       ../../packages/user/common.nix
+      ../../packages/user/chat.nix
       ../../packages/user/development.nix
       ../../packages/user/fonts.nix
       ../../packages/user/fish.nix
