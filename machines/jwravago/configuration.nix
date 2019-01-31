@@ -62,6 +62,11 @@ in
     enable = true;
     driSupport32Bit = true;
   };
+
+  # Printing
+  
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.cups-bjnp pkgs.gutenprintBin ];
   
   # This value determines the NixOS release with which your
   # system is to be compatible, in order to avoid breaking
