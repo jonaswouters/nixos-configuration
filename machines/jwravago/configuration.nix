@@ -22,6 +22,7 @@ in
       ../../packages/user/fish.nix
       ../../packages/user/insync.nix
       ../../packages/user/desktop/programs/kitty.nix
+      ../../packages/user/desktop/programs/toggl.nix
 
       # Ravago specific
       ../../packages/samba.nix

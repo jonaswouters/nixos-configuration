@@ -27,6 +27,7 @@ in
       #../../packages/user/rescuetime.nix
       ../../packages/user/insync.nix
       ../../packages/user/desktop/programs/kitty.nix
+      ../../packages/user/desktop/programs/toggl.nix
 
       # Xserver
       ../../packages/xserver.nix
