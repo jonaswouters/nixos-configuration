@@ -40,6 +40,12 @@ in
 
           bars = [];
 
+          gaps = {
+            inner = 12;
+            outer = 5;
+            smartGaps = true;
+          };
+
           keybindings = {
             "${modifier}+Return" = "exec ${terminal}";
             "${modifier}+b" = "exec ${browser}";
