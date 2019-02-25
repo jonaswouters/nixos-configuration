@@ -8,6 +8,9 @@ in
     enable = true;
     userName  = "${secrets.fullName}";
     userEmail = "${secrets.email}";
+    extraConfig = {
+      push = { default = "current"; };
+    };
     aliases = {
         co = "checkout";
         cob = "checkout -b";
