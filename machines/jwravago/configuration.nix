@@ -21,6 +21,7 @@ in
       ../../packages/user/fonts.nix
       ../../packages/user/fish.nix
       ../../packages/user/insync.nix
+      ../../packages/user/gnupg.nix
       ../../packages/user/desktop/programs/kitty.nix
       ../../packages/user/desktop/programs/toggl.nix
 

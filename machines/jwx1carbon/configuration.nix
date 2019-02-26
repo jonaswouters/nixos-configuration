@@ -21,6 +21,7 @@
       ../../packages/user/common.nix
       ../../packages/user/development.nix
       ../../packages/user/fonts.nix
+      ../../packages/user/gnupg.nix
       
     ];
     

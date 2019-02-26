@@ -26,6 +26,7 @@ in
       ../../packages/user/fish.nix
       #../../packages/user/rescuetime.nix
       ../../packages/user/insync.nix
+      ../../packages/user/gnupg.nix
       ../../packages/user/desktop/programs/kitty.nix
       ../../packages/user/desktop/programs/toggl.nix
 

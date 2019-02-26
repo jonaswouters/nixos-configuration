@@ -26,13 +26,7 @@
       enable = true;
       passwordAuthentication = false;
     };
-    
-    # Enable gpg & ssh agent
-    programs.gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
-    };
 
-        # Set channel to unstable
+    # Set channel to unstable
     system.autoUpgrade.channel = "https://nixos.org/channels/nixos-stable/";
 }
