@@ -18,5 +18,8 @@
     tmux
     ncdu # Disk usage
     ripgrep # Better than grep
+
+    # calculator
+    bc # Shell calculator
   ];
 }
