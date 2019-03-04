@@ -10,6 +10,8 @@ in
     userEmail = "${secrets.email}";
     extraConfig = {
       push = { default = "current"; };
+      pull = { rebase = true; };
+      rebase = { autoStash = true; };
     };
     aliases = {
         co = "checkout";
