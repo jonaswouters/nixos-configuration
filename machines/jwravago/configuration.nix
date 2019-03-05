@@ -18,6 +18,7 @@ in
       # Packages
       ../../packages/user/common.nix
       ../../packages/user/development.nix
+      ../../packages/docker.nix
       ../../packages/user/fonts.nix
       ../../packages/user/fish.nix
       ../../packages/user/insync.nix
