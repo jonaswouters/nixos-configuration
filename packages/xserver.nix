@@ -14,4 +14,8 @@ in
     desktopManager.default = "none";
     desktopManager.xterm.enable = false;
   };
+
+  environment.systemPackages = with pkgs; [
+    xorg.xhost
+  ];
 }
