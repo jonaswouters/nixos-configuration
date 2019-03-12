@@ -21,5 +21,8 @@ in
 
     # files
     filezilla
+
+    # API
+    unstable.postman
   ];
 }
