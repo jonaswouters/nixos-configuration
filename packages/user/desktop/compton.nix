@@ -10,5 +10,9 @@ in
         # inactiveOpacity = "0.9";
         backend = "glx";
         vSync = "opengl-swc";
+        # Opacity rules
+        opacityRules = [
+            "85:class_g = 'kitty'"
+        ];
     };
 }

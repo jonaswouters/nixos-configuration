@@ -34,7 +34,7 @@ in
           startup = [
             { command = settings.desktop.xrandr-command; }
             { command = "systemctl --user restart polybar"; always = true; notification = false; }
-            { command = "feh --bg-fill ~/InSync/Wallpapers/d1aehdnbq0h21.jpg"; always = true; notification = false; }
+            { command = "feh --bg-fill ~/InSync/Wallpapers/UltraWide/vnervnkh5ecy.jpg"; always = true; notification = false; }
             # { command = "feh --bg-fill --randomize ~/InSync/Wallpapers/*"; always = true; notification = false; }
           ];
 
