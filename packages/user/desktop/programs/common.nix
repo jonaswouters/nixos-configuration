@@ -17,6 +17,9 @@ in
     ranger # shell
     gnome3.nautilus # gui
 
+    # Unzippers
+    unzip
+
     # viewers
     zathura # PDF
     feh # image viewer
@@ -26,5 +29,8 @@ in
 
     # Diff
     gnome3.meld
+
+    # Video player
+    vlc
   ];
 }
