@@ -21,5 +21,6 @@
 
     # calculator
     bc # Shell calculator
+    libqalculate # Improved calculator
   ];
 }
