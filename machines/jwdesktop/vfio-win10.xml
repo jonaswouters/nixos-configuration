@@ -173,6 +173,9 @@
     </channel>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
+    <sound model='ac97'>
+      <address type='pci' domain='0x0000' bus='0x02' slot='0x03' function='0x0'/>
+    </sound>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
         <address domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
@@ -185,18 +188,25 @@
       </source>
       <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
     </hostdev>
-    <hostdev mode='subsystem' type='usb' managed='yes'>
-      <source>
-        <vendor id='0x046d'/>
-        <product id='0xc539'/>
-      </source>
-      <address type='usb' bus='0' port='2'/>
-    </hostdev>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
         <address domain='0x0000' bus='0x08' slot='0x00' function='0x0'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x07' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='usb' managed='yes'>
+      <source>
+        <vendor id='0x28de'/>
+        <product id='0x1142'/>
+      </source>
+      <address type='usb' bus='0' port='3'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='usb' managed='yes'>
+      <source>
+        <vendor id='0x2dc8'/>
+        <product id='0x6000'/>
+      </source>
+      <address type='usb' bus='0' port='6'/>
     </hostdev>
     <redirdev bus='usb' type='spicevmc'>
       <address type='usb' bus='0' port='4'/>
