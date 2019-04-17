@@ -85,6 +85,7 @@ in
 
   # Update settings
   system.autoUpgrade.enable = true;
+  time.hardwareClockInLocalTime = true;
 
   # Overrides
   programs.fish = {
