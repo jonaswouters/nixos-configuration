@@ -26,7 +26,7 @@ git clone https://github.com/jonaswouters/nixos-configuration /etc/nixos
 cp /etc/nixos.install/hardware-configuration.nix /etc/nixos/
 ln -sr /etc/nixos/machines/$MACHINE/configuration.nix /etc/nixos/configuration.nix
 
-ssh-agent bash -c 'ssh-add /media/secret/.ssh/id_rsa; git clone PATH_TO_PRIVATE_REPO /etc/nixos-private'
+ssh-agent bash -c 'ssh-add /media/secret/.ssh/id_rsa; git submodule update --init --recursive -j 8'
 
 ```
 
