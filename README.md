@@ -7,7 +7,8 @@ After install and rebooting
 ### Add channels
 
 ```
-nix-channel --add https://nixos.org/channels/nixos-unstable unstable
+nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+nix-channel --update nixos-unstable
 ```
 
 ### Mount SSH keys drive
@@ -33,6 +34,12 @@ ssh-agent bash -c 'ssh-add /media/secret/.ssh/id_rsa; git submodule update --ini
 ### Machine specific
 
 [Lenovo Thinkpad X1 Carbon 2018](machines/jwx1carbon/README.md)
+
+###
+
+```
+nixos-rebuild build
+```
 
 ### Set user password
 
