@@ -7,7 +7,7 @@ in
   imports =
     [
       # Drives
-      ../../private/jwravago-drives.nix
+      ../../private/work-drives.nix
 
       # Base
       ../base-workstation.nix
@@ -25,10 +25,6 @@ in
       ../../packages/user/gnupg.nix
       ../../packages/user/desktop/programs/kitty.nix
       ../../packages/user/desktop/programs/toggl.nix
-
-      # Ravago specific
-      ../../packages/samba.nix
-      ../../packages/user/desktop/programs/citrix-receiver.nix
 
       # Audio
       ../../packages/audio.nix
@@ -76,11 +72,11 @@ in
   # some software such as database servers. You should
   # change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "18.09";
+  system.stateVersion = "19.09";
   
   # Networking
   networking = {
-    hostName = "jwravago";
+    hostName = "desktop-work";
   };
 
   # Update settings
@@ -90,7 +86,7 @@ in
   # Overrides
   programs.fish = {
     shellInit = ''
-      ${builtins.readFile ../../packages/user/fish/ravago.fish }
+      ${builtins.readFile ../../packages/user/fish/work.fish }
     '';
   };
 }
