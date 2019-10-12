@@ -6,9 +6,6 @@ in
 {
   imports =
     [
-      # Drives
-      ../../private/work-drives.nix
-
       # Base
       ../base-workstation.nix
       

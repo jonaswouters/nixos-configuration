@@ -15,7 +15,7 @@
 
       # Create an alias for the unstable channel
       packageOverrides = pkgs: {
-        unstable = import <unstable> {
+        unstable = import <nixos-unstable> {
           config = config.nixpkgs.config;
         };
       };

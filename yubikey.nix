@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let 
-  unstable = import <unstable> {};
+  unstable = import <nixos-unstable> {};
 in
 {
 

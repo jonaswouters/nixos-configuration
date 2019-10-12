@@ -2,7 +2,7 @@
 { config, pkgs, ... }:
 let
   secrets = (import ../../private/secrets.nix);
-  unstable = import <unstable> {};
+  unstable = import <nixos-unstable> {};
 in
 {
   nixpkgs.config = {
