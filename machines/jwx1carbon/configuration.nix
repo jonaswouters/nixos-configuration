@@ -34,11 +34,11 @@
   # some software such as database servers. You should
   # change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "18.09";
+  system.stateVersion = "19.09";
   
   # Networking
   networking = {
-    hostName = "jwx1carbon";
+    hostName = "thinkpadje";
     wireless.enable = true;
   };
 
