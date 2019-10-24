@@ -8,6 +8,8 @@ in
     enable = true;
     defaultCacheTtlSsh = 28800;
     maxCacheTtlSsh = 28800;
+    defaultCacheTtl = 28800;
+    maxCacheTtl = 28800;
     enableSshSupport = true;
   };
 }

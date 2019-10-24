@@ -24,5 +24,9 @@ in
 
     # API
     unstable.postman
+
+    # Golang
+    unstable.go
+    gcc
   ];
 }
