@@ -12,6 +12,12 @@ in
       push = { default = "current"; };
       pull = { rebase = true; };
       rebase = { autoStash = true; };
+      "url \"git@bitbucket.org:\"" = { insteadOf = "https://bitbucket.org/"; };
+      "url \"git@github.com:\"" = { insteadOf = "https://github.com/"; };
+    };
+    signing = {
+      signByDefault = true;
+      key = "3E5DD4E9B37115436F1F91E847C02FA6BCC1976D";
     };
     aliases = {
         co = "checkout";

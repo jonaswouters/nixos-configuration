@@ -21,6 +21,7 @@ in
     unstable.yubikey-personalization
     unstable.yubikey-personalization-gui
     unstable.yubioath-desktop
+    unstable.yubikey-manager
   ];
 
   services.udev.packages = with pkgs; [

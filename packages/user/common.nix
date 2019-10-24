@@ -11,4 +11,9 @@ in
   home-manager.users.${secrets.username}.home.packages = with pkgs; [
     keybase
   ];
+
+    # Enable Keybase service
+    services.keybase = {
+      enable = true;
+    };
 }
